@@ -1,7 +1,7 @@
 import scala.io.Source
 import util.chaining.scalaUtilChainingOps
 
-@main def hello: Unit = 
+@main def main: Unit = 
   var input = getInput
   println("Silver")
   silver(input)
