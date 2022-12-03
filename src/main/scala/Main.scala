@@ -1,1 +1,1 @@
-@main def main = Day2.runProd
+@main def main = Day3.runProd
