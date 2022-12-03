@@ -1,13 +1,8 @@
-import scala.io.Source
 import util.chaining.scalaUtilChainingOps
 
 object Day1 {
-    def main: Unit = 
-        var input = getInput
-        println("Silver")
-        silver(input)
-        println("Gold")
-        gold(input)
+    def main: Unit = Runner.runProd(1, silver, gold)
+
 
     def silver(input: String): Unit = 
     parseInput(input)
@@ -27,6 +22,4 @@ object Day1 {
     def parseInput(input: String): Array[Array[Int]] =
         input.split("\n\n").map(_.split("\n").map(_.toInt))
 
-    def getInput: String =
-        Source.fromFile("./src/main/input/day1.txt").mkString
 }

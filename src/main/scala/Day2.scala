@@ -1,5 +1,3 @@
-
-import scala.io.Source
 import util.chaining.scalaUtilChainingOps
 
 object Day2 {
@@ -33,12 +31,7 @@ object Day2 {
         def winTo = Paper
     }
 
-    @main def main: Unit = 
-        var input = getInput
-        println("Silver")
-        silver(input)
-        println("Gold")
-        gold(input)
+    def main: Unit = Runner.runProd(2, silver, gold)
 
     def silver(input: String): Unit = 
         parseInput(input)
@@ -77,7 +70,7 @@ object Day2 {
 
     def inputToMovesGold(input: Array[(Char, Char)]): Array[(Move, Move)] =
         input.map((a, b) => {
-            var elfMove = elfMoves(a)
+            val elfMove = elfMoves(a)
             (elfMove, myTatics(b)(elfMove))
         })
 
@@ -87,6 +80,4 @@ object Day2 {
     def parseInput(input: String): Array[(Char, Char)] =
         input.split("\n").map(s => (s.charAt(0), s.charAt(2)))
 
-    def getInput: String =
-        Source.fromFile("./src/main/input/day2.txt").mkString
 }
