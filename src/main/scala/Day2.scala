@@ -1,6 +1,21 @@
 import util.chaining.scalaUtilChainingOps
 
-object Day2 {
+object Day2 extends Day {
+    def dayNum: Int = 2
+
+    def silver(input: String): Unit = 
+        parseInput(input)
+            .pipe(inputToMoves)
+            .map((a, b) => b.score(a))
+            .sum
+            .pipe(println)
+
+    def gold(input: String): Unit =
+        parseInput(input)
+            .pipe(inputToMovesGold)
+            .map((a, b) => b.score(a))
+            .sum
+            .pipe(println)
 
     trait Move {
         def value: Int
@@ -30,22 +45,6 @@ object Day2 {
         def loseTo = Rock
         def winTo = Paper
     }
-
-    def main: Unit = Runner.runProd(2, silver, gold)
-
-    def silver(input: String): Unit = 
-        parseInput(input)
-            .pipe(inputToMoves)
-            .map((a, b) => b.score(a))
-            .sum
-            .pipe(println)
-
-    def gold(input: String): Unit =
-        parseInput(input)
-            .pipe(inputToMovesGold)
-            .map((a, b) => b.score(a))
-            .sum
-            .pipe(println)
 
     def elfMoves = 
         Map(

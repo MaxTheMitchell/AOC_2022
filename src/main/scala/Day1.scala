@@ -1,8 +1,7 @@
 import util.chaining.scalaUtilChainingOps
 
-object Day1 {
-    def main: Unit = Runner.runProd(1, silver, gold)
-
+object Day1 extends Day {
+    def dayNum: Int = 1
 
     def silver(input: String): Unit = 
     parseInput(input)
