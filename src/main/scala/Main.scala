@@ -1,1 +1,7 @@
-@main def main = Day3.runProd
+@main def main =
+    val day = Day4
+    println("\nTEST:") 
+    day.runTest
+    println("\nPROD:") 
+    day.runProd
+    println()
