@@ -1,5 +1,5 @@
 @main def main =
-    val day = Day8
+    val day = Day9
     println("\nTEST:") 
     day.runTest
     println("\nPROD:") 
